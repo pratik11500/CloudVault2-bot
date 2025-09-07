@@ -71,14 +71,14 @@ def home():
     }
 
     .online-dot {
-      width: 12px;
-                    height: 12px;
+      width: 22px;
+                    height: 22px;
                     background-color: #00ff41;
                     border-radius: 50%;
-                    box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+                    border: 5px solid black;
                     animation: glow 1.5s infinite alternate;
-                    top: 30px;
-                    right: 30px;
+                    top: 28px;
+                    right: 35px;
                     position: relative;
     }
 
@@ -99,10 +99,11 @@ def home():
       }
 
       .online-dot {
-         width: 8px;
-                    height: 8px;
+         width: 15px;
+                    height: 15px;
                    top: 20px;
-                   left: -23px;
+                   left: -28px;
+                   border: 3px solid black;
       }
     }
 
