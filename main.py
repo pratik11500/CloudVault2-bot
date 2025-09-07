@@ -51,29 +51,21 @@ def home():
                 animation: pulse 2s infinite;
             }
             .online-dot {
-                width: 12px;
-                height: 12px;
-                background-color: #00ff41;
-                border-radius: 50%;
-                box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
-                animation: glow 1.5s infinite alternate;
+                    width: 12px;
+                    height: 12px;
+                    background-color: #00ff41;
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+                    animation: glow 1.5s infinite alternate;
+                    top: 30px;
+                    right: 30px;
+                    position: relative;
             }
             .status-text {
                 font-size: 2.5rem;
                 font-weight: bold;
                 text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
                 animation: glitch 2s infinite linear, fadeIn 1s ease-in;
-            }
-            @keyframes pulse {
-                0% {
-                    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
-                }
-                50% {
-                    box-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
-                }
-                100% {
-                    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
-                }
             }
             @keyframes glow {
                 0% {
@@ -121,8 +113,10 @@ def home():
                     height: 60px;
                 }
                 .online-dot {
-                    width: 10px;
-                    height: 10px;
+                    width: 8px;
+                    height: 8px;
+                   top: 20px;
+                   left: -23px;
                 }
             }
             @media (max-width: 480px) {
