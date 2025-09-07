@@ -13,45 +13,65 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nexon Status</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                background-color: #000000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                color: #00ff41;
-                overflow: hidden;
-            }
-            .container {
-                text-align: center;
-                position: relative;
-            }
-            .icon-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-            .icon {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                border: 2px solid rgb(0 255 66 / 50%);
-                animation: pulse 2s infinite;
-            }
-            .online-dot {
-                    width: 12px;
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexon Status</title>
+  <link rel="icon" href="https://i.ibb.co/0jtqWhCW/nexon.webp" type="image/webp" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #00ff41;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Background Blur Image */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:black;
+      z-index: -1;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 1;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 255, 66, 0.5);
+    }
+
+    .online-dot {
+      width: 12px;
                     height: 12px;
                     background-color: #00ff41;
                     border-radius: 50%;
@@ -60,90 +80,62 @@ def home():
                     top: 30px;
                     right: 30px;
                     position: relative;
-            }
-            .status-text {
-                font-size: 2.5rem;
-                font-weight: bold;
-                text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
-                animation: glitch 2s infinite linear, fadeIn 1s ease-in;
-            }
-            @keyframes glow {
-                0% {
-                    box-shadow: 0 0 10px #00ff41;
-                }
-                100% {
-                    box-shadow: 0 0 20px #00ff41;
-                }
-            }
-            @keyframes glitch {
-                0% {
-                    transform: translate(0);
-                }
-                20% {
-                    transform: translate(-2px, 2px);
-                    text-shadow: 2px 0 #ff00ff, -2px 0 #00e6e6;
-                }
-                40% {
-                    transform: translate(2px, -2px);
-                    text-shadow: -2px 0 #ff00ff, 2px 0 #00e6e6;
-                }
-                60% {
-                    transform: translate(-2px, 2px);
-                    text-shadow: 2px 0 #ff00ff, -2px 0 #00e6e6;
-                }
-                80% {
-                    transform: translate(2px, -2px);
-                    text-shadow: -2px 0 #ff00ff, 2px 0 #00e6e6;
-                }
-                100% {
-                    transform: translate(0);
-                }
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .status-text {
-                    font-size: 2rem;
-                }
-                .icon {
-                    width: 60px;
-                    height: 60px;
-                }
-                .online-dot {
-                    width: 8px;
+    }
+
+    .status-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .status-text {
+        font-size: 2rem;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .online-dot {
+         width: 8px;
                     height: 8px;
                    top: 20px;
                    left: -23px;
-                }
-            }
-            @media (max-width: 480px) {
-                .status-text {
-                    font-size: 1.5rem;
-                }
-                .icon {
-                    width: 50px;
-                    height: 50px;
-                }
-                .online-dot {
-                    width: 8px;
-                    height: 8px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="icon-wrapper">
-                <img src="https://i.ibb.co/0jtqWhCW/nexon.webp" alt="Nexon Icon" class="icon">
-                <div class="online-dot"></div>
-            </div>
-            <h1 class="status-text">Nexon is live</h1>
-        </div>
-    </body>
-    </html>
+      }
+    }
+
+    @media (max-width: 480px) {
+      .status-text {
+        font-size: 1.5rem;
+      }
+
+      .icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .online-dot {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+    <div class="icon-wrapper">
+      <img src="https://i.ibb.co/0jtqWhCW/nexon.webp" alt="Nexon Icon" class="icon" />
+      <div class="online-dot"></div>
+    </div>
+    <h1 class="status-text">Nexon is live</h1>
+  </div>
+</body>
+</html>
+
     """
 
 @app.route('/health')
