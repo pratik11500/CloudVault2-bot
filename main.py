@@ -47,7 +47,7 @@ def home():
                 width: 80px;
                 height: 80px;
                 border-radius: 50%;
-                box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+                border: 2px solid rgb(0 255 66 / 50%);
                 animation: pulse 2s infinite;
             }
             .online-dot {
@@ -137,7 +137,7 @@ def home():
     <body>
         <div class="container">
             <div class="icon-wrapper">
-                <img src="/nexon.webp" alt="Nexon Icon" class="icon">
+                <img src="https://i.ibb.co/0jtqWhCW/nexon.webp" alt="Nexon Icon" class="icon">
                 <div class="online-dot"></div>
             </div>
             <h1 class="status-text">Nexon is live</h1>
