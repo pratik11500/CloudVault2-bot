@@ -143,7 +143,7 @@ def home():
     <body>
         <div class="container">
             <div class="icon-wrapper">
-                <img src="/nexon.webp" alt="Nexon Icon" class="icon">
+                <img src="nexon.webp" alt="Nexon Icon" class="icon">
                 <div class="online-dot"></div>
             </div>
             <h1 class="status-text">Nexon is live</h1>
@@ -243,7 +243,6 @@ async def new_post(ctx):
     await ctx.send(
         f"**📝 Creating new post - Step 1/3**\n{ctx.author.mention}, what's the topic of your post?"
     )
-
 
 async def handle_post_creation_reply(message):
     """Handle replies during post creation"""
@@ -427,4 +426,3 @@ async def show_channels(ctx):
 # Start Flask and bot
 Thread(target=run_flask).start()
 bot.run(DISCORD_TOKEN)
-</xai Artifact>
