@@ -143,7 +143,7 @@ def home():
     <body>
         <div class="container">
             <div class="icon-wrapper">
-                <img src="nexon.webp" alt="Nexon Icon" class="icon">
+                <img src="/nexon.webp" alt="Nexon Icon" class="icon">
                 <div class="online-dot"></div>
             </div>
             <h1 class="status-text">Nexon is live</h1>
