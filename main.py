@@ -184,7 +184,7 @@ CATEGORY_CHANNELS = {
     'Education': 1416998145195245598,      # Replace with actual channel ID
     'Website': 1416998288791699556,        # Replace with actual channel ID
     'Hack': 1416998373763842168,           # Replace with actual channel ID
-    'Others': 1416998431641043077          # Replace with actual channel ID
+    'Others': 1417004096413634661          # Replace with actual channel ID
 }
 
 @bot.event
