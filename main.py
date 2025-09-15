@@ -180,11 +180,11 @@ CATEGORIES = {
 
 # Channel mappings - replace with actual channel IDs
 CATEGORY_CHANNELS = {
-    'Entertainment': 1413856614510755880,  # Replace with actual channel ID
-    'Education': 1413881799322636319,      # Replace with actual channel ID
-    'Website': 1413881852451885266,        # Replace with actual channel ID
-    'Hack': 1413881887428055193,           # Replace with actual channel ID
-    'Others': 1413881920248615143          # Replace with actual channel ID
+    'Entertainment': 1416998047086547066,  # Replace with actual channel ID
+    'Education': 1416998145195245598,      # Replace with actual channel ID
+    'Website': 1416998288791699556,        # Replace with actual channel ID
+    'Hack': 1416998373763842168,           # Replace with actual channel ID
+    'Others': 1416998431641043077          # Replace with actual channel ID
 }
 
 @bot.event
